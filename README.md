@@ -1,2 +1,7 @@
 # Fullerena.github.io
-Test Web
+Finally.
+
+## Hanya Test
+
+Mengingat bahwa React App tidak bisa dibuat github Pages Lewat
+Android. Maka inilah, HTML, CSS, Js
