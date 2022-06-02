@@ -19,4 +19,4 @@ Tunggu konten selanjutnya
 ---
 
 #### social media
-[Facebook](https://www.facebook.com/haikal.isa.359)
+[Facebook](https://www.facebook.com/haikal.isa.359)     [Instagram](https://www.instagram.com/fast_animation_haikal/)
