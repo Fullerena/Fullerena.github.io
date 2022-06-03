@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html data-theme="dark" id="tema">
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Sir Leo Official</title>
+    
+  </head>
+  
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+  <style type="text/css" media="all">
+  body{
+    width: clamp(450px, 10vw,max-width);
+  }
+  article>header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+    .splash{
+      height: clamp(400px, 70vw,800px);
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+    .title{
+      padding: clamp(90px, 14vw, 900px);
+    }
+    #one { 
+      position: sticky; 
+      top: 0; 
+    }
+    nav{
+      background-color: hsla(192,100%,84.8%,0.15);
+      z-index: 6;
+      backdrop-filter: blur(5px);
+    }
+
+    div{
+      padding:14px;
+    }
+    
+.glass{
+  background-color: hsla(192,100%,84.8%,0.3);
+  backdrop-filter: blur(7px);
+  box-shadow: 0px 0px 50px hsl(192,100%,84.8%);
+  border: solid skyblue 1px;
+}
+
+.op{
+  background-color: rgba(0,0,0,0.8);
+}
+.white{
+  color: hsl(192.3,6.2%,94%) !important;
+}
+
+@keyframes rot{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.panel{
+  background-color: hsl(250,79%,14.1%);
+  height: clamp(400px, 10em, 900px);
+  width: clamp(360px, 80%, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 77;
+  border: ridge silver 10px;
+  
+}
+.main{
+  position: relative;
+  background-color: transparent;
+  height: 50px;
+  width: clamp(400px, 10%, 80%);
+  padding-left: 41.8px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+
+}
+.big{
+ position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: solid transparent 1px;
+  box-shadow: 1px 0px 5px 9px #fffee0;
+  border-radius: 100%;
+  z-index: 9;
+}
+.smol{
+ position: relative;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(90deg, #00adff ,  blue, indigo, black);
+  border-radius: 100%;
+}
+canvas{
+  border: groove hsl(0,0%,91.8%) 10px;
+  background-color: hsl(0,0%,94.4%);
+  box-shadow: inset 10px 15px 2px hsla(0,0%,40.6%,0.409);
+}
+  </style>
+  <!-- Alpine Plugins -->
+<script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+ 
+<!-- Alpine Core -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<body>
+ <nav id="one">
+   <ul>
+  <li style="padding-left:16px;"><details role="list"><summary aria-haspopup="listbox" role="button">Konten</summary>
+  <ul role="listbox">
+    <li><a href="#1">Kenapa?</a></li>
+    <li><a href="#2">Tempat Rawan</a></li>
+    <li><a href="#3">Yo mendaftar</a></li>
+    <li><a href="#4">Simulasi</a></li>
+  </ul>
+  </details></li>
+</ul>
+<ul>
+  <li style="padding-left:28px;"><b></b></li>
+</ul>
+   <ul>
+  <li><label for="switch">&nbsp;Tema
+<input type="checkbox" name="switch" id="switch" role="switch" onclick="swich()"/>
+</label></li>
+</ul>
+</nav>
+<div class="splash">
+  <hgroup class="title">
+    <h1>Siap Bertempur?</h1>
+    <h1>Maka bersiaplah</h1>
+  </hgroup>
+</div>
+<div id="1"class="container">
+<h3>Kenapa?</h3>
+<p>Kita semua tahu bahwa pertahanan kota kita sangat lemah. Kita harus merekrut seorang petarung yang berani di perbatasan dan pertempuran</p>
+</div>
+<div id="2">
+  
+</div>
+<hr />
+<div class="container">
+  <h3>Tempat Rawan</h3>
+  <p>catatan: gambar hanya ilustrasi</p>
+  <article style="margin-bottom:10px;">
+    <header style="padding:2px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Spruce_forest_at_Holma.jpg/1024px-Spruce_forest_at_Holma.jpg" loading="lazy" alt="" />
+    </header>
+    <header>
+      <b>Daerah Reforestasi</b>
+    </header>
+    Daerah reforestasi adalah kawasan yang penting untuk menjaga keseimbangan ekosistem dan masih belum dijaga. Tadinya tandus tapi akhirnya telah dipulihkan oleh mantan Developer
+<br><br>
+ini pernyataan mereka
+<blockquote>
+  Ngotak dong. gw capek capek menanam eh kalian malah merusak alam
+<footer>
+  <cite>Developer</cite>
+  </footer>
+</blockquote>
+  </article>
+  
+  <article>
+    <header style="padding:2px;">
+      <img  src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Downtown_Oklahoma_City_2005.jpg" loading="lazy" alt="" />
+    </header>
+    <header>
+      <b>Kota</b>
+    </header>
+    kejadian 2 bulan lalu tapi aku tidak tahu apa yang terjadi sebenarnya. Tapi yang pasti itu membuat pertahanan menurun
+  </article>
+  
+  <article>
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Calm_Morning_at_Diana_Lake.webp/639px-Calm_Morning_at_Diana_Lake.webp.png" loading="lazy" alt="" />
+    </header>
+    <header>
+      <b>Danau</b>
+    </header>
+    Air yang tenang jangan dikira tak ada Hidrogen. Tempat ini begitu luas, jika diabaikan, kemungkinan..... Ya mungkin ada ranjau, kapal, racun.
+  </article>
+</div>
+<div id="3">
+  
+</div>
+<hr />
+<div class="container">
+<h2>Yo mendaftar</h2>
+</div>
+<div x-data="{hide: $persist(true),
+              nama: $persist(''),
+              umur: $persist(0),
+              keahlian: $persist('')}" class="container">
+<form @submit.prevent="hide = !hide" x-show="hide">
+  <label for="nama">Nama
+  <input type="text" x-model="nama" id="nama" placeholder="Masukkan Nama"/>
+  </label>
+  <label for="umur">Umur: <span x-text="umur">12</span>
+<input type="range" x-model="umur" id="umur" min="12" max="60" value ="12"/>
+</label>
+<label for="keahlian">keahlian
+<input type="text" x-model="keahlian" id="keahlian"/>
+</label>
+<label for="term">
+<input onclick="che()" type="checkbox" name="term" id="term" />
+dengan ini saya menyetujui <a onclick="showing()">aturan</a>
+</label>
+<button type="submit" id="but" disabled>Kirim</button>
+<button type="reset" class="secondary">Reset</button>
+</form>
+
+<table x-show="!hide">
+  <tr>
+    <td>nama: </td>
+    <td x-text="nama"></td>
+  </tr>
+  <tr>
+    <td>umur: </td>
+    <td x-text ="umur"></td>
+  </tr>
+  <tr>
+    <td>kemampuan</td>
+    <td x-text="keahlian"></td>
+</tr>
+</table>
+</div>
+<dialog class="op">
+  <article class="glass">
+    <header class="glass white">
+      <a href="#close" aria-label="Close" class="close glass" onclick="tutup()"></a>
+      <b>Aturan</b>
+    </header>
+    <ol class="white">
+      <li>Jangan buang Sampah sembarangan</li>
+      <li>Jangan Ambil Barang berlabel "Jangan Ambil"</li>
+      <li>Jangan mengambil barang orang lain</li>
+      <li>Aturan Nomor 3 tidak berlaku bila ada orang yang mengambil barang "milikmu"</li>
+      <li>Datang tepat waktu (terlambat nggak apa apa juga sih)</li>
+     <li>jangan klaim <b><a data-tooltip="Solar Flare, Rose, Rosemary, Green Shadow">istri saya</a></b></li>
+    </ol>
+    <footer style="background-color:transparent;border:solid transparent 1px;">
+      <button onclick="tutup()" class="outline">Baiklah</button>
+    </footer>
+  </article>
+</dialog>
+
+<div id="4">
+  
+</div>
+
+<div class="container">
+  <hgroup>
+  <h2>Simulasi Fisika</h2>
+  <h2>dibuat dengan CSS dan javascript</h2>
+  </hgroup>
+  <h4>Gerak Melingkar </h4>
+  <div id="7" class="panel">
+   <div class="big">
+      </div>
+    <div class="main" id="main">
+      <div class="smol"></div>
+    </div>
+  </div>
+  <div>
+  <a role="button" class="contrast" href="#7" id="simulateO">Jalankan Simulasi</a>
+  <a href="#7" role="button" class="secondary" id="res">Reset</a>
+  </div>
+  <hr />
+  <div id="8">
+  <h4>Bola Pantul</h4>
+
+  <canvas id="canvas" height="300px" width="350px"></canvas>
+  </div>
+  <div>
+    <a role="button" class="contrast" href="#8" id="simulateB">Jalankan Simulasi</a>
+  <a href="#8" role="button" class="secondary" id="bandul">Stop</a>
+  </div>
+  <hr />
+  <div id="elektron">
+  <h4>Elektron mengorbit</h4>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/H-1_atom.png" alt="" />
+      <a role="button" class="contrast" href="#elektron" onclick="openModal()">wkwkwkwkwk</a>
+  <a href="#elektron" role="button" class="secondary" data-tooltip="???">Reset</a>
+  </div>
+  <dialog>
+    <article>
+     <h3> Emangnya lu kira elektron mengorbit?</h3>
+         <button class="outline" onclick="closeModal()">Baiklah</button>
+         </article>
+  </dialog>
+</div>
+<section class="container">
+  Ok segitu saja untuk showcase-nya. Saya pamit dulu  Sekali lagi terima kasih atas masukannya. Semoga kedepannya akan bisa lebih baik lagi
+  <article>
+    <header>
+      Tentang Sir Leo
+    </header>
+    Ia adalah ksatria yang handal. Ia sangat gigih tapi suka berhalusinasi. Jangan main-main dengan dia. karena nanti <del>akunmu akan dikenang</del> membuat dia sedih.
+  </article>
+</section>
+<br />
+<br />
+<hr />
+<div class="container">
+<hgroup>
+  <h4>Komentar</h4>
+  <h4>dibuat dengan alpine $persist</h4>
+</hgroup>
+ </div>
+<section class="container" x-data="{isiComp: $persist([]),
+     username: $persist(''),
+     isi: $persist(''),
+     addComment(){
+     this.isiComp.push({nama: this.username, isi: this.isi});
+     alert('komentar sudah ditambahkan');
+     }
+    }">
+  <div>
+    <h5>Rose</h5>
+    <p >GG bang, naro kolom komentar di landing page wkwkwk</p>
+  </div>
+  <div>
+    <h5>Bambang</h5>
+    <p >Timdak rammah bintang 1</p>
+  </div>
+  <div>
+    <h5>Heavy</h5>
+    <p >istri kok tanaman.</p>
+    <img src="https://github.com/Fullerena/Fullerena.github.io/raw/main/2022_06_02_19.48.48~2-01.jpeg" alt="Stress" />
+  </div>
+  
+<template x-for="komen in isiComp">
+  <div class="container">
+    <h5 x-text="komen.nama"></h5>
+    <p x-text="komen.isi"></p>
+  </div>
+</template>
+<br />
+<br />
+<section class="container">
+  <form @submit.prevent = "addComment">
+    <input x-model="username" type="text" placeholder="nama" value="" />
+    <textarea x-model="isi" rows="6" cols="30" placeholder="komentar"></textarea>
+    <button type="submit">Kirim</button>
+  </form>
+</section>
+
+</section>
+
+
+<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="2%" y1="65%" x2="98%" y2="35%"><stop offset="5%" stop-color="#0693e388"></stop><stop offset="95%" stop-color="#8ed1fc88"></stop></linearGradient></defs><path d="M 0,600 C 0,600 0,200 0,200 C 64.55897435897435,219.98717948717947 129.1179487179487,239.97435897435895 217,243 C 304.8820512820513,246.02564102564105 416.08717948717947,232.08974358974362 499,224 C 581.9128205128205,215.91025641025638 636.5333333333334,213.66666666666666 704,193 C 771.4666666666666,172.33333333333334 851.7794871794872,133.24358974358972 945,151 C 1038.2205128205128,168.75641025641028 1144.3487179487179,243.35897435897436 1229,261 C 1313.6512820512821,278.64102564102564 1376.825641025641,239.32051282051282 1440,200 C 1440,200 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="2%" y1="65%" x2="98%" y2="35%"><stop offset="5%" stop-color="#0693e3ff"></stop><stop offset="95%" stop-color="#8ed1fcff"></stop></linearGradient></defs><path d="M 0,600 C 0,600 0,400 0,400 C 94.32051282051285,401.15641025641025 188.6410256410257,402.3128205128205 258,395 C 327.3589743589743,387.6871794871795 371.7564102564103,371.9051282051282 446,366 C 520.2435897435897,360.0948717948718 624.3333333333334,364.06666666666666 704,384 C 783.6666666666666,403.93333333333334 838.9102564102565,439.82820512820507 924,437 C 1009.0897435897435,434.17179487179493 1124.0256410256409,392.62051282051283 1215,380 C 1305.9743589743591,367.37948717948717 1372.9871794871797,383.68974358974356 1440,400 C 1440,400 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg>
+  </body>
+
+  <script type="text/javascript" charset="utf-8" defer>
+  function swich(){
+    let tema = document.getElementById("tema");
+    let mycheck = document.getElementById("switch");
+    if (mycheck.checked == true){
+      tema.setAttribute("data-theme", "light");
+    }else{
+        tema.setAttribute("data-theme", "dark");
+    }
+  }
+  function che(){
+  if (document.getElementById("term").checked == false){
+    document.getElementById("but").setAttribute("disabled", "");
+  }else{
+    document.getElementById("but").removeAttribute("disabled");
+  }
+  }
+
+
+let showmodal = document.querySelectorAll("dialog");
+let closing = document.querySelectorAll(".close");
+function showing(){
+  showmodal[0].setAttribute("open", "");
+}
+function tutup(){
+  showmodal[0].removeAttribute("open");
+}
+function openModal(){
+  showmodal[1].setAttribute("open","")
+}
+function closeModal(){
+  showmodal[1].removeAttribute("open");
+}
+document.getElementById("simulateO").addEventListener('click', ()=>{document.getElementById("main").setAttribute('style','animation: rot linear 8s infinite !important')});
+document.getElementById("res").addEventListener('click', ()=>{document.getElementById("main").removeAttribute("style")});
+let ctx = document.getElementById("canvas").getContext("2d");
+var x1 = 115;
+var y1 = 150;
+var speedx = 1.5;
+var speedy = 2;
+var rad = 20;
+ctx.beginPath();
+ctx.arc(x1,y1, rad, 2*Math.PI,false);
+ctx.stroke();
+ctx.closePath();
+let stop = false;
+function bounce(){
+  window.requestAnimationFrame(bounce);
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  ctx.beginPath();
+  ctx.arc(x1,y1, rad, 2*Math.PI,false);
+  ctx.stroke();
+  if (x1+rad > document.querySelector("canvas").width || x1-rad < 0){
+    speedx = -speedx;
+  }
+  if (y1+rad > document.querySelector("canvas").height || y1-rad < 0){
+    speedy = -speedy;
+  }
+  if (stop){
+    return;
+  }
+  x1 += speedx;
+  y1 += speedy;
+}
+document.getElementById("simulateB").addEventListener("click", bounce, {once: true});
+document.getElementById("simulateB").addEventListener("click", ()=>stop=false);
+document.getElementById("bandul").addEventListener("click", ()=>stop=true);
+
+  </script>
+  <noscript>
+    Javascript Tidak Didukung  </noscript>
+</html>
