@@ -5,7 +5,7 @@
          Alpine.js Copyright © 2019-2021 Caleb Porzio and contributors   
          Bootstap  Copyright © 2022 twitter,inc Bootstrap Author   
          Jquery.js Copyright © 2022 Jquery   
-         newcss.net Copyright (c) 2020 Example (https://github.com/3x), xz
+         newcss Copyright (c) 2020 Example (https://github.com/3x), xz
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
