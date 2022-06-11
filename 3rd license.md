@@ -6,7 +6,7 @@
          Bootstap  Copyright © 2022 twitter,inc Bootstrap Author   
          Jquery.js Copyright © 2022 Jquery   
          newcss Copyright (c) 2020 Example (https://github.com/3x), xz
-
+         minstyle.css Copyright (c) 2018 Rémi MARION
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
