@@ -38,6 +38,6 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 
 
 --------------------------------------------------------------
-This application uses the libraries [QuickLink](https://quick.link). These libraries are available under the Apache 2.0 license, which can be obtained from [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
+This application uses the libraries [QuickLink](https://getquick.link). These libraries are available under the Apache 2.0 license, which can be obtained from [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 The library Quicklink does not contains any attribution notices.
