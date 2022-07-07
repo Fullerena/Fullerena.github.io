@@ -9,5 +9,12 @@
     "src" : "/PWA/icon.png",
     "type": "image/png",
     "sizes": "72x72"
-  }]
+  },
+  {
+      "src": "blob:https://www.pwabuilder.com/328c15a5-970f-4bf9-8347-4b4dd6af4e6c",
+      "type": "image/png",
+      "sizes": "71x71",
+      "purpose": "any"
+    }
+]
 }
