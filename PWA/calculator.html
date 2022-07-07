@@ -10,23 +10,14 @@
     <script defer src="alpine.min.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css" media="all">
       input[type="text"]{
-        height: 10vw;
-        font-size: clamp(5vw, 1rem,  20vw);
+        height: 2rem;
+        width: 70vw;
+        font-size: 2rem;
         font-family: monospace;
       }
       .responsive{
         display: grid;
-        grid-template-columns: 4fr 1fr;
-      }
-      .three{
-        width: 70%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: stretch;
-      }
-      .three>button{
-        flex: 1;
+        grid-template-columns: 1.7fr 1fr;
       }
       .darkmode{
         position: fixed;
@@ -62,9 +53,9 @@
         border-collapse: collapse;
       }
       td{
-        width: 22vw;
-        height: 22vw;
-      }
+        width: 12vw;
+        height: 12vw;
+        }
     </style>
     <script>
       if ("serviceWorker" in navigator) {
@@ -148,10 +139,14 @@
         <input class="w-100 b-accent" type="text" x-model="val" readonly/>
       </div>
       <div class="responsive m3">
-        <div class="" x-data="{number: [7, 8, 9, 4, 5, 6, 1, 2, 3]}">
+        <div class="" x-data="{number: [1,2,3]}">
           <div class="three">
+            <template x-for="i in 3">
+            <div style="display:block">
             <template x-for="num in number">
-              <button class="btn bg-accent white large " @click="addNum(num)"  x-text="num.toString()"></button>
+              <button class="btn bg-accent white large " @click="addNum(num+3*(i-1))"  x-text="(num+3*(i-1)).toString()"></button>
+            </template>
+            </div>
             </template>
             <button class="btn bg-error white large b-white" @click="val=''">C</button>
             <button class="btn bg-accent white large b-white"  @click="addNum(0)" >0</button>
@@ -159,11 +154,15 @@
             <button class="btn bg-accent white large" @click="myEval()">=</button>
           </div>
         </div>
-        <div style="display: flex; flex-flow:column nowrap; align-items:stretch; justify-content:space-around;">
+        <div >
           <button @click="add('+')" class="btn white large bg-accent  p2 b-white"  >+</button>
+          <br />
           <button @click="add('-')" class="btn white large bg-accent  p2 b-white"  >-</button>
+          <br />
           <button @click="add('*')" class="btn white large bg-accent  p2 b-white"  >×</button>
+          <br />
           <button @click="add('/')" class="btn white large bg-accent  p2 b-white"  >÷</button>
+          <br />
           <button @click="backspace" class="btn white large bg-accent  p2 b-white"  >&#9003;</button>
         </div>
       </div>
@@ -203,8 +202,8 @@
      </section>
      <button @click="activated = !activated" class="darkmode btn pill bg-black ph2 b-white " type="submit">🌙</button>
      
-<section x-show="page==='#tic'" class="vh-100 tc">
-   <div class="vc"
+<section x-show="page==='#tic'" class="m5 tc">
+   <div class="mt4"
         x-data="{role:'O',
                  disp:'',
                  utilArray: [],
@@ -280,17 +279,17 @@
          <table border="1" class="tic m2 pv4 ">
            <tr>
              <template x-for="i in 3">
-             <td class="tc large" @click ="turn(0,i-1)" x-text="track[0][i-1]"></td>
+             <td class="tc " @click ="turn(0,i-1)" x-text="track[0][i-1]"></td>
              </template>
            </tr>
            <tr>
              <template x-for="i in 3">
-             <td class="tc large" @click ="turn(1,i-1)" x-text="track[1][i-1]"></td>
+             <td class="tc " @click ="turn(1,i-1)" x-text="track[1][i-1]"></td>
              </template>
            </tr>
            <tr>
              <template x-for="i in 3">
-             <td class="tc large" @click ="turn(2,i-1)" x-text="track[2][i-1]"></td>
+             <td class="tc " @click ="turn(2,i-1)" x-text="track[2][i-1]"></td>
              </template>
            </tr>
          </table>
