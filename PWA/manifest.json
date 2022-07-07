@@ -4,9 +4,9 @@
   "theme_color": "#f38d21",
   "background_color": "#0c0d2a",
   "display": "standalone",
-  "start_url": "fullerena.github.io/PWA/calculator.html",
+  "start_url": "/PWA/calculator.html",
   "icons" : [{
-    "src" : "fullerena.github.io/PWA/icon.png",
+    "src" : "/PWA/icon.png",
     "type": "image/png",
     "sizes": "72x72"
   }]
