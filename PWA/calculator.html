@@ -62,7 +62,7 @@
       if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("fullerena.github.io/PWA/sw.js", {scope: '/PWA/'})
+      .register("/PWA/sw.js", {scope: '/PWA/'})
       .then(res => console.log("service worker registered"))
       .catch(err => console.log("service worker not registered", err))
   })
