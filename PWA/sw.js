@@ -5,7 +5,7 @@ const assets = [
   "/lit.css/lit.css",
   "/lit.css/util.css",
   "/alpine.min.js"
-  ]
+  ];
 
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
