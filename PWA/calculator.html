@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta lang="id" http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWA</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./lit.css/lit.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./lit.css/util.css" type="text/css" media="all" />
+    <script defer src="alpine.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="all">
+      input[type="text"]{
+        height: 10vw;
+        font-size: clamp(5vw, 1rem,  20vw);
+        font-family: monospace;
+      }
+      .large{
+        font-size: clamp(5vw, 1rem,  20vw);
+      }
+      .responsive{
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+      }
+      .three{
+        width: 70%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: stretch;
+      }
+      .three>button{
+        flex: 1;
+      }
+      .darkmode{
+        position: fixed;
+        right: 4vw;
+        bottom: 4vw;
+      }
+      details{
+        position: relative;
+        list-style: none;
+        width: 80%;
+      }
+      details ul{
+        list-style: none;
+        position: absolute;
+        z-index: 80;
+        display: block;
+        width: 96%;
+        border: solid 2px;
+      }
+      ul>li:hover{
+        background-color: hsla(0,0%,89%,0.503);
+      }
+      div>.tic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      details>ul>li>a{
+        display: block;
+      }
+      .tic{
+        border: solid 10;
+        border-collapse: collapse;
+      }
+      td{
+        width: 22vw;
+        height: 22vw;
+      }
+    </style>
+    <script>
+      if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then(res => console.log("service worker registered"))
+      .catch(err => console.log("service worker not registered", err))
+  })
+}
+    </script>
+  </head>
+  <body x-bind:class="activated?'bg-black white':'m0'" x-data="{page: location.hash, activated: false}" @hashchange.window="page=location.hash">
+    <nav class="ph4">
+      <details class="card">
+        <summary>
+         Aplikasi Lainnya
+        </summary>
+        <ul x-bind:class="activated?'bg-black p1 mt2':'p1 mt2 bg-white'">
+          <li><a href="#kalkul">kalkulator</a></li>
+          <li><a href="#imt">penghitung Imt</a></li>
+          <li><a href="#counter">Counter App</a></li>
+          <li><a href="#tic">Tic Tac Toe</a></li>
+        </ul>
+      </details>
+    </nav>
+    <!---yikes-->
+    <header x-show="page === '#kalkul' || page===''" class="vh-100 tc mt4"  x-data="{val: '',
+              preVal: '',
+              k: '',
+              used: false,
+              addNum(alpha){
+              if(this.val===Infinity){
+              this.val='';
+              this.val+=alpha.toString();
+              }else{
+              this.val+=alpha.toString();
+              }
+              this.used=false;
+              },
+              backspace(){
+              this.k = this.val.toString();
+              if(this.k[this.k.length-1] === '+' || this.k[this.k.length-1] === '-' || this.k[this.k.length-1] === '*' || this.k[this.k.length-1] === '/'){
+              this.used = false;
+              }
+              this.val = this.val.toString().slice(0,-1);
+              },
+              myEval(){
+              if(this.used){
+              alert('invalid');
+              }else{
+              this.preVal = new Function('return '+ this.val);
+              this.val = this.preVal();
+              }
+              },
+              add(char){
+              if(this.val!==''){
+              if(this.used){
+              alert('jangan menambah 2 operator bersebelahan');
+              }else{
+              if(this.val===Infinity){
+              this.val='';
+              }else{
+              this.k = this.val.toString();
+              if(this.k[this.k.length-1] === '+' || this.k[this.k.length-1] === '-' || this.k[this.k.length-1] === '*' || this.k[this.k.length-1] === '/'){
+              this.used = true;
+              alert('jangan menambah 2 operator bersebelahan');
+              }else{
+              this.val+=char;
+              this.used=true;
+              }
+              }
+              }
+              }else{
+              alert('masukkan angka');
+              }
+              
+              }
+              }">
+      <div class="m3">
+        <input class="w-100 b-accent" type="text" x-model="val" readonly/>
+      </div>
+      <div class="responsive m3">
+        <div class="" x-data="{number: [7, 8, 9, 4, 5, 6, 1, 2, 3]}">
+          <div class="three">
+            <template x-for="num in number">
+              <button class="btn bg-accent white large " @click="addNum(num)"  x-text="num.toString()"></button>
+            </template>
+            <button class="btn bg-error white large b-white" @click="val=''">C</button>
+            <button class="btn bg-accent white large b-white"  @click="addNum(0)" >0</button>
+            
+            <button class="btn bg-accent white large" @click="myEval()">=</button>
+          </div>
+        </div>
+        <div style="display: flex; flex-flow:column nowrap; align-items:stretch; justify-content:space-around;">
+          <button @click="add('+')" class="btn white large bg-accent  p2 b-white"  >+</button>
+          <button @click="add('-')" class="btn white large bg-accent  p2 b-white"  >-</button>
+          <button @click="add('*')" class="btn white large bg-accent  p2 b-white"  >×</button>
+          <button @click="add('/')" class="btn white large bg-accent  p2 b-white"  >÷</button>
+          <button @click="backspace" class="btn white large bg-accent  p2 b-white"  >&#9003;</button>
+        </div>
+      </div>
+     </header>
+     
+     
+     
+     
+    <form x-show="page==='#imt'" id="imt" class="c card m2 tc mt4" x-data="{massa: 0, tinggi: 0,         hasil: 0, 
+              hitung(){
+              this.hasil=(this.massa*10000/(this.tinggi*this.tinggi)).toFixed(3);
+              }
+              }" @submit.prevent="hitung()">
+      <h3 class="normal">Penghitung IMT</h3>
+      <label>
+        Massa (Kg)
+      <input type="number" x-model="massa"/>
+      </label>
+      <br />
+      <label>
+        Tinggi (cm)
+      <input type="number" x-model="tinggi"/>
+      </label>
+      <p x-bind:class="hasil<17?'error':hasil>=17&&hasil<=18.5?'success':'accent'" x-text="hasil.toString()"></p>
+      <button class="btn rounded b-success" type="submit">Hitung</button>
+     </form>
+     
+     <section x-show="page==='#counter'" class="tc c vh-100">
+       <div class="vc" x-data="{count: 0}">
+         <h2 class="normal">Counter App</h2>
+         <h3 class="normal" x-text="count"></h3>
+         <br />
+         <br />
+         <button style="padding:2rem;font-size:1rem" @click="count++" class="btn pill bg-success " type="submit">Klik</button>
+          <button @click="count=0" class=" btn pill" type="submit">Reset</button> 
+       </div>
+     </section>
+     <button @click="activated = !activated" class="darkmode btn pill bg-black ph2 b-white " type="submit">🌙</button>
+     
+<section x-show="page==='#tic'" class="vh-100 tc">
+   <div class="vc"
+        x-data="{role:'O',
+                 disp:'',
+                 utilArray: [],
+                 O_WIN: false,
+                 X_WIN: false,
+                 draw: false,
+                 END: false,
+                 step: 0,
+                 track: [
+                 ['','',''],
+                 ['','',''],
+                 ['','','']
+                 ],
+                 combination: [
+                 [0, 1, 2],
+                 [3, 4, 5],
+                 [6, 7, 8],
+                 [0, 3, 6],
+                 [1, 4, 7],
+                 [2, 5, 8],
+                 [0, 4, 8],
+                 [2, 4, 6]
+                 ],
+                 turn(x,y){
+                 if(!this.END){
+                 this.role=this.role==='X'?'O':'X';
+                 this.disp=this.role;
+                 if(this.track[x][y] === ''){
+                 this.track[x][y]=this.disp;
+                 }
+                 }
+                 this.step++;
+                 if(this.step===9 && !this.O_WIN && !this.X_WIN){
+                 this.draw=true;
+                 this.END=true;
+                 }
+                 this.checkWin();
+                 if(this.O_WIN || this.X_WIN){
+                 this.END = true;
+                 }
+                 },
+                 checkWin(){
+                 this.utilArray=this.track[0].concat(this.track[1],this.track[2]);
+                 for(let i=0;i<8;++i){
+                 if(this.utilArray[this.combination[i][0]] === this.utilArray[this.combination[i][1]] && this.utilArray[this.combination[i][0]] === this.utilArray[this.combination[i][2]]){
+                 if(this.utilArray[this.combination[i][0]] === 'X'){
+                 this.X_WIN=true;
+                 }else if (this.utilArray[this.combination[i][0]] === 'O'){
+                 this.O_WIN=true;
+                 }
+                 }
+                 }
+                 
+                 },
+                 reset(){
+                 this.role='O';
+                 this.disp='';
+                 this.utilArray= [];
+                 this.X_WIN = false;
+                 this.O_WIN = false;
+                 this.END = false;
+                 this.draw = false;
+                 this.step= 0;
+                 this.track= [
+                 ['','',''],
+                 ['','',''],
+                 ['','','']
+                 ];
+                 }
+                 }">
+         <h2>Tic Tac Toe</h2>
+         <h4 x-show="!END">Giliran: <span x-text="role==='X'?'O':'X'"></span></h4>
+         <table border="1" class="tic m2 pv4 ">
+           <tr>
+             <template x-for="i in 3">
+             <td class="tc large" @click ="turn(0,i-1)" x-text="track[0][i-1]"></td>
+             </template>
+           </tr>
+           <tr>
+             <template x-for="i in 3">
+             <td class="tc large" @click ="turn(1,i-1)" x-text="track[1][i-1]"></td>
+             </template>
+           </tr>
+           <tr>
+             <template x-for="i in 3">
+             <td class="tc large" @click ="turn(2,i-1)" x-text="track[2][i-1]"></td>
+             </template>
+           </tr>
+         </table>
+         <b><p x-text="X_WIN?'Pemenang: Player X':O_WIN?'Pemenang: O':draw?'Seri':''"></p></b>
+         <button @click="reset" class="btn" type="submit">Reset</button>
+       </div>
+     </section>
+  </body>
+</html>

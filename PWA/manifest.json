@@ -1,0 +1,14 @@
+{
+  "name": "Useless PWA",
+  "short_name": "Useless",
+  "theme_color": "#f38d21",
+  "background_color": "#cdcdcd",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/calculator.html",
+  "icons" : {
+    "src" : "./icon.png",
+    "type" : "image/png",
+    "sizes" : "72×72"
+  }
+}
