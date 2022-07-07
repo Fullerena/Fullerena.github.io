@@ -1,10 +1,10 @@
 const calculator = "calculator";
 const assets = [
-  "/",
-  "/calculator.html",
-  "/lit.css/lit.css",
-  "/lit.css/util.css",
-  "/alpine.min.js"
+  "fullerena.github.io/PWA/",
+  "fullerena.github.io/PWA/calculator.html",
+  "fullerena.github.io/PWA/lit.css/lit.css",
+  "fullerena.github.io/PWA/lit.css/util.css",
+  "fullerena.github.io/PWA/alpine.min.js"
   ];
 
 self.addEventListener("install", installEvent => {
