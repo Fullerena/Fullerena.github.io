@@ -8,6 +8,7 @@
          newcss Copyright (c) 2020 Example (https://github.com/3x), xz
          minstyle.css Copyright (c) 2018 Rémi MARION
          concrete.css Copyright (c) 2021 Louis Merlin
+         lit.css Copyright (c) 2018 Arham Jain
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
